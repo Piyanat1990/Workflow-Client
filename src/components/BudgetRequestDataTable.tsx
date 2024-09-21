@@ -9,6 +9,7 @@ interface BudgetRequestDataTableProps {
 
 function BudgetRequestDataTable({ items}: BudgetRequestDataTableProps) {
 
+
   return (
     <table className="min-w-full bg-white">
       <thead>
@@ -30,7 +31,7 @@ function BudgetRequestDataTable({ items}: BudgetRequestDataTableProps) {
           <tr key={request.id}>
             <td className="px-6 py-4 whitespace-nowrap">
               <button className="text-gray-600 hover:text-blue-600">
-              <Link href="/edit/1"><Pencil className="h-4 w-4" /></Link>
+              <Link href={`/edit/${request.id}`}><Pencil className="h-4 w-4" /></Link>
                 
               </button>
             </td>

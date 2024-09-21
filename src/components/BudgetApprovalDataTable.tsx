@@ -1,7 +1,7 @@
 
 import { formatDecimal } from "@/lib/format-decimal";
 import { BudgetRequest } from "@/models/budget-request";
-import { Pencil } from "lucide-react";
+
 
 interface BudgetRequestDataTableProps {
   items: BudgetRequest[];
@@ -48,7 +48,7 @@ function BudgetApprovalDataTable({ items}: BudgetRequestDataTableProps) {
             <td className="px-6 py-4 whitespace-nowrap text-right">
               {formatDecimal(request.amount)}
             </td>
-            <td className="px-6 py-4 whitespace-nowrap">PENDING</td>
+            <td className="px-6 py-4 whitespace-nowrap">{request.status}</td>
           </tr>
         ))}
       </tbody>

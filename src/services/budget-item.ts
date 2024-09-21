@@ -1,6 +1,11 @@
 import { api } from "@/lib/api";
 import { BudgetRequest } from "@/models/budget-request";
 import { Login } from "@/models/login";
+import { useRouter } from 'next/router';
+
+
+
+
 
 interface FetchBudgetItemsResponse {
   data: BudgetRequest[];
@@ -42,6 +47,18 @@ interface CreateLoginResponse {
 
 export const createLogin = async (body: CreateLoginRequest): Promise<Login> => {
   const response = await api.post<CreateLoginResponse>("/login", body);
+  const { data } = response.data;
+  return data;
+};
+
+//////////Get by id////////////////////////////////
+interface FetchBudgetItemsResponse {
+  data: BudgetRequest[];
+}
+
+export const FetchBudgetItem = async (id:number): Promise<BudgetRequest[]> => {
+
+  const response = await api.get<FetchBudgetItemsResponse>(`/items/${id}`);
   const { data } = response.data;
   return data;
 };

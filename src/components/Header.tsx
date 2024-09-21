@@ -8,8 +8,8 @@ function Header() {
           <Link href="/" className="text-xl font-bold">
             Budget App
           </Link>
-          <Link href="/entry" className="text-sm">
-            Entry
+          <Link href="/add" className="text-sm">
+            AddItem
           </Link>
           <Link href="/approval" className="text-sm">
             Approval
